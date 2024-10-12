@@ -4,11 +4,30 @@ const currentYear = new Date().getFullYear();//this year
 const firstDayOfYear = new Date(`${currentYear}-01-01T00:00:00Z`);//
 const timestamp = Math.floor(firstDayOfYear.getTime() / 1000);
 var EddingtonNumber = 0;
+
+
+// Assume you have a variable that determines whether to show the styles
+let showCardTitle = false; // Set this variable as needed
+
+// Get all the elements that match the selector
+const cardTitleSmall = document.querySelectorAll('#dashboard-cards .card .card-title h2 small');
+
+// Conditionally apply the style based on the variable
+if (showCardTitle) {
+    cardTitleSmall.forEach(text => text.style.display = 'block'); // Show the elements
+} else {
+    cardTitleSmall.forEach(text => text.style.display = 'none');  // Hide the elements
+}
+
+
+
+
 //let longestStreak = 0;
 //let currentStreak = 1;
 
 
 document.addEventListener('DOMContentLoaded', () => {
+
     // Check if the URL contains the authorization code
     const urlParams = new URLSearchParams(window.location.search);
     const code = urlParams.get('code');
@@ -339,5 +358,20 @@ $(document).ready(function () {
             zindex++;
         }
 
+    });
+
+    //Updates the label text based on the toggle's state.
+    const toggle = document.getElementById('toggle');
+    const run_rideLabels = document.querySelectorAll('#run_ride-label');
+    const running_cyclingLabels = document.querySelectorAll('#running_cycling-label');
+
+    toggle.addEventListener('change', function () {
+        if (this.checked) {
+            run_rideLabels.forEach(label => label.textContent = 'run');
+            running_cyclingLabels.forEach(label => label.textContent = 'running');
+        } else {
+            run_rideLabels.forEach(label => label.textContent = 'ride');
+            running_cyclingLabels.forEach(label => label.textContent = 'cycling');
+        }
     });
 });

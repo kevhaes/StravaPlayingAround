@@ -13,12 +13,20 @@
             <img src="./assets/images/strava-connect.png" alt="Alternate Text" class="small-image" />
         </a>
     </div>
+    <div class="toggle-container">
+        <span id="<span id="running_cycling-label"></span><strong>Cycling</strong>
+        <input type="checkbox" id="toggle" class="toggle-checkbox">
+        <label for="toggle" class="toggle-label"></label>
+        <span id="right-label"><strong>Running</strong></span>
+    </div>
+
+
     <div class='row dashboard-cards'>
         <div class='card col-md-4'>
             <div class='card-title'>
                 <h2>
-                    Eddington Number
-                    <small>To reach Eddington Number <span id="nextEddingtonTarget"></span>, <br>you need <span id="runsNeeded"></span> more runs of at least <span id="nextEddingtonTarget"></span> km.</small>
+                     Eddington Number
+                    <small>To reach Eddington Number <span id="nextEddingtonTarget"></span>, <br>you need <span id="runsNeeded">no</span> more <span id="run_ride-label">ride</span>s of at least <span id="nextEddingtonTarget"></span> km.</small>
 
                 </h2>
                 <div class='task-count'>
@@ -42,8 +50,8 @@
         <div class='card col-md-4'>
             <div class='card-title'>
                 <h2>
-                    Longest streak
-                    <small>Your longest streak <br> this year is <span id="longestStreak"></span> consecutive days of running</small>
+                    Longest <span id="run_ride-label"></span> streak
+                    <small>Your longest streak <br> this year is <span id="longestStreak">0</span> consecutive days of <span id="running_cycling-label">cycling</span></small>
                 </h2>
                 <div class='task-count'>
                     <span id="longestStreak"></span>
@@ -65,10 +73,10 @@
         <div class='card col-md-4'>
             <div class='card-title'>
                 <h2>
-                    Top Kudos earners
+                    Top 3 <span id="run_ride-label"></span> Kudos earners
                     <small>
                         Your biggest hit is <br>
-                        <span id="averageKudos"></span>kudos
+                        <span id="averageKudos">0 </span>  kudos
                     </small>
                 </h2>
                 <div class='task-count'>
